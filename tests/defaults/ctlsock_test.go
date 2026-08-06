@@ -5,8 +5,8 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/v2/ctlsock"
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/ctlsock"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 func TestCtlSock(t *testing.T) {

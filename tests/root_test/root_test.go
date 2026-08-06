@@ -13,9 +13,9 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
 
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 func asUser(uid int, gid int, supplementaryGroups []int, f func() error) error {
@@ -329,7 +329,7 @@ func TestOverlay(t *testing.T) {
 }
 
 // Check that mkdir and file create works with force_owner and runnung as root
-// https://github.com/rfjakob/gocryptfs/issues/783
+// https://github.com/ink-splatters/gocryptfs/issues/783
 func TestRootForceOwner(t *testing.T) {
 	if os.Getuid() != 0 {
 		t.Skip("must run as root")

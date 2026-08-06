@@ -3,7 +3,7 @@
 // golang.org/x/sys/unix commit
 // https://github.com/golang/sys/commit/d0df966e6959f00dc1c74363e537872647352d51
 // changed unix.Setreuid/unix.Setregid functions to affect the whole thread, which is
-// what gocryptfs does NOT want (https://github.com/rfjakob/gocryptfs/issues/893).
+// what gocryptfs does NOT want (https://github.com/ink-splatters/gocryptfs/issues/893).
 // The functions Setreuid/Setegid are copy-pasted from one commit before
 // (9e1f76180b77a12eb07c82eb8e1ea8a7f8d202e7).
 //

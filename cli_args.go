@@ -4,7 +4,7 @@ import (
 	// Should be initialized before anything else.
 	// This import line MUST be in the alphabetically first source code file of
 	// package main!
-	_ "github.com/rfjakob/gocryptfs/v2/internal/ensurefds012"
+	_ "github.com/ink-splatters/gocryptfs/v2/internal/ensurefds012"
 
 	"fmt"
 	"net"
@@ -18,10 +18,10 @@ import (
 
 	"github.com/hanwen/go-fuse/v2/fuse"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/configfile"
-	"github.com/rfjakob/gocryptfs/v2/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/v2/internal/stupidgcm"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/configfile"
+	"github.com/ink-splatters/gocryptfs/v2/internal/exitcodes"
+	"github.com/ink-splatters/gocryptfs/v2/internal/stupidgcm"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // argContainer stores the parsed CLI options and arguments
@@ -120,7 +120,7 @@ func prefixOArgs(osArgs []string) ([]string, error) {
 //
 // BUG: In `-extpass -X`, the `-X` gets transformed `--X`.
 // See "Dash duplication" in the man page and
-// https://github.com/rfjakob/gocryptfs/issues/621 .
+// https://github.com/ink-splatters/gocryptfs/issues/621 .
 func convertToDoubleDash(osArgs []string) (out []string) {
 	out = append(out, osArgs...)
 	for i, v := range out {

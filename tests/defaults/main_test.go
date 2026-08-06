@@ -16,7 +16,7 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 func TestMain(m *testing.M) {
@@ -243,7 +243,7 @@ func TestMvWarningSymlink(t *testing.T) {
 	if err != nil {
 		t.Log(string(out))
 		if runtime.GOOS == "darwin" {
-			t.Skip("mv on darwin chokes on broken symlinks, see https://github.com/rfjakob/gocryptfs/issues/349")
+			t.Skip("mv on darwin chokes on broken symlinks, see https://github.com/ink-splatters/gocryptfs/issues/349")
 		}
 		t.Fatal(err)
 	}
@@ -431,9 +431,9 @@ func TestFsync(t *testing.T) {
 // force_owner was broken by the v2.0 rewrite:
 // The owner was only forced for GETATTR, but not for CREATE, LOOKUP, MKNOD.
 //
-// https://github.com/rfjakob/gocryptfs/issues/609
-// https://github.com/rfjakob/gocryptfs/pull/610
-// https://github.com/rfjakob/gocryptfs/issues/629
+// https://github.com/ink-splatters/gocryptfs/issues/609
+// https://github.com/ink-splatters/gocryptfs/pull/610
+// https://github.com/ink-splatters/gocryptfs/issues/629
 func TestForceOwner(t *testing.T) {
 	cDir := test_helpers.InitFS(t)
 	os.Chmod(cDir, 0777) // Mount needs to be accessible for us

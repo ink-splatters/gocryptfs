@@ -8,8 +8,8 @@ import (
 	"github.com/hanwen/go-fuse/v2/fuse"
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/inomap"
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/inomap"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
 )
 
 var _ = (fs.NodeStatxer)((*Node)(nil))

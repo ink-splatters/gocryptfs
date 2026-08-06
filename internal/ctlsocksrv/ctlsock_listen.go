@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // cleanupOrphanedSocket deletes an orphaned socket file at `path`.

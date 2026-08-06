@@ -13,7 +13,7 @@ import (
 //  2. Is ARM64  && has AES instructions && Go is v1.11 or higher
 //     (commit https://github.com/golang/go/commit/4f1f503373cda7160392be94e3849b0c9b9ebbda)
 //
-// See https://github.com/rfjakob/gocryptfs/wiki/CPU-Benchmarks
+// See https://github.com/ink-splatters/gocryptfs/wiki/CPU-Benchmarks
 // for benchmarks.
 func PreferOpenSSLAES256GCM() bool {
 	if BuiltWithoutOpenssl {
@@ -50,7 +50,7 @@ func HasAESGCMHardwareSupport() bool {
 	}
 
 	// On the Apple M1, the CPU has AES acceleration, despite cpu.ARM64.HasAES
-	// reading false: https://github.com/rfjakob/gocryptfs/issues/556#issuecomment-848079309
+	// reading false: https://github.com/ink-splatters/gocryptfs/issues/556#issuecomment-848079309
 	if runtime.GOOS == "darwin" && runtime.GOARCH == "arm64" {
 		return true
 	}

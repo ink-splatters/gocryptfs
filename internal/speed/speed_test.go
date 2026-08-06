@@ -8,8 +8,8 @@ import (
 
 	"golang.org/x/crypto/chacha20poly1305"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/siv_aead"
-	"github.com/rfjakob/gocryptfs/v2/internal/stupidgcm"
+	"github.com/ink-splatters/gocryptfs/v2/internal/siv_aead"
+	"github.com/ink-splatters/gocryptfs/v2/internal/stupidgcm"
 )
 
 /*
@@ -21,7 +21,7 @@ BenchmarkStupidGCM-2   	  100000	     22552 ns/op	 181.62 MB/s
 BenchmarkGoGCM-2       	   20000	     81871 ns/op	  50.03 MB/s
 BenchmarkAESSIV-2      	   10000	    104623 ns/op	  39.15 MB/s
 PASS
-ok  	github.com/rfjakob/gocryptfs/v2/internal/speed	6.022s
+ok  	github.com/ink-splatters/gocryptfs/v2/internal/speed	6.022s
 */
 
 func BenchmarkStupidGCM(b *testing.B) {

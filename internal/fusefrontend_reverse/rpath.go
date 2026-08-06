@@ -7,10 +7,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/v2/internal/pathiv"
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/nametransform"
+	"github.com/ink-splatters/gocryptfs/v2/internal/pathiv"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // rDecryptName decrypts the ciphertext name "cName", given the dirIV of the

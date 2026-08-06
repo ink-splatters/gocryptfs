@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // FS_NOCOW_FL is the flag set by "chattr +C" to disable copy-on-write on
@@ -45,8 +45,8 @@ func DetectQuirks(cipherdir string) (q uint64) {
 		return 0
 	}
 
-	// Preallocation on Btrfs is broken ( https://github.com/rfjakob/gocryptfs/issues/395 )
-	// and slow ( https://github.com/rfjakob/gocryptfs/issues/63 ).
+	// Preallocation on Btrfs is broken ( https://github.com/ink-splatters/gocryptfs/issues/395 )
+	// and slow ( https://github.com/ink-splatters/gocryptfs/issues/63 ).
 	//
 	// The root cause is that btrfs COW allocates new blocks on write even for
 	// preallocated extents, defeating the purpose of fallocate. However, if the

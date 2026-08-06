@@ -8,7 +8,7 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
 )
 
 const (

@@ -12,8 +12,8 @@ import (
 
 	"github.com/hanwen/go-fuse/v2/fuse"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/cryptocore"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 const (
@@ -158,7 +158,7 @@ func (be *ContentEnc) DecryptBlock(ciphertext []byte, blockNo uint64, fileID []b
 	nonce := ciphertext[:be.cryptoCore.IVLen]
 	if bytes.Equal(nonce, be.allZeroNonce) {
 		// Bug in tmpfs?
-		// https://github.com/rfjakob/gocryptfs/issues/56
+		// https://github.com/ink-splatters/gocryptfs/issues/56
 		// http://www.spinics.net/lists/kernel/msg2370127.html
 		return nil, errors.New("all-zero nonce")
 	}

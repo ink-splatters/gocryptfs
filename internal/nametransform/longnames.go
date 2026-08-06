@@ -9,8 +9,8 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 const (

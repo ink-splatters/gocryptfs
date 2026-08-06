@@ -13,9 +13,9 @@ import (
 
 	"github.com/rfjakob/eme"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/siv_aead"
-	"github.com/rfjakob/gocryptfs/v2/internal/stupidgcm"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/siv_aead"
+	"github.com/ink-splatters/gocryptfs/v2/internal/stupidgcm"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 const (

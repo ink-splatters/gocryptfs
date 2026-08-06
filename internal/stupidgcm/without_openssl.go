@@ -8,7 +8,7 @@ import (
 
 	"crypto/cipher"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/exitcodes"
+	"github.com/ink-splatters/gocryptfs/v2/internal/exitcodes"
 )
 
 const (

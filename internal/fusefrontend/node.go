@@ -9,9 +9,9 @@ import (
 	"github.com/hanwen/go-fuse/v2/fs"
 	"github.com/hanwen/go-fuse/v2/fuse"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/nametransform"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // Node is a file or directory in the filesystem tree
@@ -83,7 +83,7 @@ func (n *Node) Getattr(ctx context.Context, f fs.FileHandle, out *fuse.AttrOut) 
 	// Hack for deleted fifos. As OPEN on a fifo does not reach
 	// the filesystem, we have no fd to access it. To make "cat" and git's
 	// t9300-fast-import.sh happy, we fake it as best as we can.
-	// https://github.com/rfjakob/gocryptfs/issues/929
+	// https://github.com/ink-splatters/gocryptfs/issues/929
 	if errno == syscall.ENOENT && n.StableAttr().Mode == syscall.S_IFIFO {
 		out.Mode = syscall.S_IFIFO
 		out.Ino = n.StableAttr().Ino

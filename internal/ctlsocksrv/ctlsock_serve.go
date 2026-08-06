@@ -11,8 +11,8 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/rfjakob/gocryptfs/v2/ctlsock"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/ctlsock"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // Interface should be implemented by fusefrontend[_reverse]

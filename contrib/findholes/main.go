@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/rfjakob/gocryptfs/v2/contrib/findholes/holes"
+	"github.com/ink-splatters/gocryptfs/v2/contrib/findholes/holes"
 )
 
 func main() {

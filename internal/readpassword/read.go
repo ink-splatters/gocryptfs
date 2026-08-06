@@ -11,7 +11,7 @@ import (
 
 	"golang.org/x/term"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 const (
@@ -88,7 +88,7 @@ func readPasswordTerminal(prompt string) ([]byte, error) {
 // It exits with a fatal error on read error or empty result.
 func readPasswordStdin(prompt string) ([]byte, error) {
 	// This should make debugging situations like
-	// https://github.com/rfjakob/gocryptfs/issues/852
+	// https://github.com/ink-splatters/gocryptfs/issues/852
 	// easier. Only works on Linux, otherwise shows "?".
 	target, err := os.Readlink("/proc/self/fd/0")
 	if err != nil {

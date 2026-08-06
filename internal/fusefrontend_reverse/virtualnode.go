@@ -8,9 +8,9 @@ import (
 	"github.com/hanwen/go-fuse/v2/fs"
 	"github.com/hanwen/go-fuse/v2/fuse"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/configfile"
-	"github.com/rfjakob/gocryptfs/v2/internal/inomap"
-	"github.com/rfjakob/gocryptfs/v2/internal/nametransform"
+	"github.com/ink-splatters/gocryptfs/v2/internal/configfile"
+	"github.com/ink-splatters/gocryptfs/v2/internal/inomap"
+	"github.com/ink-splatters/gocryptfs/v2/internal/nametransform"
 )
 
 const (
@@ -102,7 +102,7 @@ func (n *Node) newVirtualMemNode(content []byte, parentStat *syscall.Stat_t, ino
 	a.FromStat(st)
 	// With inode number reuse and hard links, we could have returned
 	// wrong data for gocryptfs.diriv and gocryptfs.xyz.longname files, respectively
-	// (https://github.com/rfjakob/gocryptfs/issues/802).
+	// (https://github.com/ink-splatters/gocryptfs/issues/802).
 	//
 	// Now that this is fixed, ensure that rsync and similar tools pick up the new
 	// correct files by advancing mtime and ctime by 10 seconds, which should be more

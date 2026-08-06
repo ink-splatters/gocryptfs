@@ -12,10 +12,10 @@ import (
 
 	"github.com/pkg/xattr"
 
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
-// https://github.com/rfjakob/gocryptfs/issues/543
+// https://github.com/ink-splatters/gocryptfs/issues/543
 func TestCpA(t *testing.T) {
 	fn1 := filepath.Join(test_helpers.TmpDir, t.Name())
 	fn2 := filepath.Join(test_helpers.DefaultPlainDir, t.Name())
@@ -73,7 +73,7 @@ func getfacl(fn string) (string, error) {
 	return string(out), err
 }
 
-// https://github.com/rfjakob/gocryptfs/issues/543
+// https://github.com/ink-splatters/gocryptfs/issues/543
 func TestAcl543(t *testing.T) {
 	fn1 := test_helpers.TmpDir + "/TestAcl543"
 	fn2 := test_helpers.DefaultPlainDir + "/TestAcl543"

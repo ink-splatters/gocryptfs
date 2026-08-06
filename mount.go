@@ -21,16 +21,16 @@ import (
 	"github.com/hanwen/go-fuse/v2/fs"
 	"github.com/hanwen/go-fuse/v2/fuse"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/configfile"
-	"github.com/rfjakob/gocryptfs/v2/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/v2/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/v2/internal/ctlsocksrv"
-	"github.com/rfjakob/gocryptfs/v2/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/v2/internal/fusefrontend"
-	"github.com/rfjakob/gocryptfs/v2/internal/fusefrontend_reverse"
-	"github.com/rfjakob/gocryptfs/v2/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/v2/internal/openfiletable"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/configfile"
+	"github.com/ink-splatters/gocryptfs/v2/internal/contentenc"
+	"github.com/ink-splatters/gocryptfs/v2/internal/cryptocore"
+	"github.com/ink-splatters/gocryptfs/v2/internal/ctlsocksrv"
+	"github.com/ink-splatters/gocryptfs/v2/internal/exitcodes"
+	"github.com/ink-splatters/gocryptfs/v2/internal/fusefrontend"
+	"github.com/ink-splatters/gocryptfs/v2/internal/fusefrontend_reverse"
+	"github.com/ink-splatters/gocryptfs/v2/internal/nametransform"
+	"github.com/ink-splatters/gocryptfs/v2/internal/openfiletable"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // AfterUnmount is called after the filesystem has been unmounted.
@@ -72,7 +72,7 @@ func doMount(args *argContainer) {
 		// and `drop_privileges` in `man mount.fuse3` for background.
 	} else {
 		err = isEmptyDir(args.mountpoint)
-		// OSXFuse will create the mountpoint for us ( https://github.com/rfjakob/gocryptfs/issues/194 )
+		// OSXFuse will create the mountpoint for us ( https://github.com/ink-splatters/gocryptfs/issues/194 )
 		if runtime.GOOS == "darwin" && os.IsNotExist(err) {
 			tlog.Info.Printf("Mountpoint %q does not exist, but should be created by OSXFuse",
 				args.mountpoint)
@@ -123,7 +123,7 @@ func doMount(args *argContainer) {
 		// Disconnect from the controlling terminal by creating a new session.
 		// This prevents us from getting SIGINT when the user presses Ctrl-C
 		// to exit a running script that has called gocryptfs, or SIGHUP when
-		// xfce4-terminal closes itself ( https://github.com/rfjakob/gocryptfs/issues/660 ).
+		// xfce4-terminal closes itself ( https://github.com/ink-splatters/gocryptfs/issues/660 ).
 		_, err = syscall.Setsid()
 		if err != nil {
 			tlog.Warn.Printf("Setsid: %v", err)
@@ -401,7 +401,7 @@ func initGoFuse(rootNode fs.InodeEmbedder, args *argContainer) *fuse.Server {
 		// The kernel usually submits multiple read requests in parallel,
 		// which means we serve them in any order. Out-of-order reads are
 		// expensive on some backing network filesystems
-		// ( https://github.com/rfjakob/gocryptfs/issues/92 ).
+		// ( https://github.com/ink-splatters/gocryptfs/issues/92 ).
 		//
 		// Setting SyncRead disables FUSE_CAP_ASYNC_READ. This makes the kernel
 		// do everything in-order without parallelism.

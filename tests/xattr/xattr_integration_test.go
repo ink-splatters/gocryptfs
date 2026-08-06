@@ -17,8 +17,8 @@ import (
 
 	"github.com/pkg/xattr"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/internal/cryptocore"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 func TestMain(m *testing.M) {
@@ -367,7 +367,7 @@ func TestAcl(t *testing.T) {
 }
 
 // TestSlashInName checks that slashes in xattr names are allowed
-// https://github.com/rfjakob/gocryptfs/issues/627
+// https://github.com/ink-splatters/gocryptfs/issues/627
 func TestSlashInName(t *testing.T) {
 	fn := test_helpers.DefaultPlainDir + "/" + t.Name()
 	err := os.WriteFile(fn, []byte("12345"), 0700)

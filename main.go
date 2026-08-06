@@ -1,5 +1,5 @@
 // gocryptfs is an encrypted overlay filesystem written in Go.
-// See README.md ( https://github.com/rfjakob/gocryptfs/blob/master/README.md )
+// See README.md ( https://github.com/ink-splatters/gocryptfs/blob/master/README.md )
 // and the official website ( https://nuetzlich.net/gocryptfs/ ) for details.
 package main
 
@@ -13,13 +13,13 @@ import (
 
 	"github.com/hanwen/go-fuse/v2/fuse"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/configfile"
-	"github.com/rfjakob/gocryptfs/v2/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/v2/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/v2/internal/fido2"
-	"github.com/rfjakob/gocryptfs/v2/internal/readpassword"
-	"github.com/rfjakob/gocryptfs/v2/internal/speed"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/configfile"
+	"github.com/ink-splatters/gocryptfs/v2/internal/contentenc"
+	"github.com/ink-splatters/gocryptfs/v2/internal/exitcodes"
+	"github.com/ink-splatters/gocryptfs/v2/internal/fido2"
+	"github.com/ink-splatters/gocryptfs/v2/internal/readpassword"
+	"github.com/ink-splatters/gocryptfs/v2/internal/speed"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // loadConfig loads the config file `args.config` and decrypts the masterkey,

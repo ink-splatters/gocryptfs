@@ -5,7 +5,7 @@ import (
 
 	"github.com/hanwen/go-fuse/v2/fs"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
 )
 
 // On Darwin, ENOATTR is returned when an attribute is not found.

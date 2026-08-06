@@ -8,9 +8,9 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/configfile"
+	"github.com/ink-splatters/gocryptfs/v2/internal/configfile"
 
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 // Create & test fs with -longnamemax=100

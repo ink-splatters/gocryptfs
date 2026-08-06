@@ -10,11 +10,11 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
-// https://github.com/rfjakob/gocryptfs/issues/641
+// https://github.com/ink-splatters/gocryptfs/issues/641
 //
 // I was trying to run the Docker daemon with the recommended overlay2 storage driver, and encrypt its `/var/lib/docker` directory using gocryptfs. overlay2 was giving me the following errors:
 // ```

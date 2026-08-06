@@ -9,10 +9,10 @@ import (
 
 	"os"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/v2/internal/cryptocore"
-	"github.com/rfjakob/gocryptfs/v2/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/contentenc"
+	"github.com/ink-splatters/gocryptfs/v2/internal/cryptocore"
+	"github.com/ink-splatters/gocryptfs/v2/internal/exitcodes"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 const (
@@ -291,7 +291,7 @@ func (cf *ConfFile) WriteFile() error {
 	err = fd.Sync()
 	if err != nil {
 		// This can happen on network drives: FRITZ.NAS mounted on MacOS returns
-		// "operation not supported": https://github.com/rfjakob/gocryptfs/issues/390
+		// "operation not supported": https://github.com/ink-splatters/gocryptfs/issues/390
 		tlog.Warn.Printf("Warning: fsync failed: %v", err)
 		// Try sync instead
 		syscall.Sync()

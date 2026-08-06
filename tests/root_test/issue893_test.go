@@ -10,13 +10,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 // gocryptfs v2.5.0 upgraded x/sys/unix and we found out that, since
 // https://github.com/golang/sys/commit/d0df966e6959f00dc1c74363e537872647352d51 ,
 // unix.Setreuid() and friends now affect the whole process instead of only the
-// current thread, breaking allow_other: https://github.com/rfjakob/gocryptfs/issues/893
+// current thread, breaking allow_other: https://github.com/ink-splatters/gocryptfs/issues/893
 //
 // Let's not have this happen again by testing it here.
 func TestConcurrentUserOps(t *testing.T) {
@@ -64,7 +64,7 @@ func TestConcurrentUserOps(t *testing.T) {
 
 // Test that our root_test.asUser function works as expected under concurrency by
 // similating a long-runnig operation with sleep(10ms).
-// https://github.com/rfjakob/gocryptfs/issues/893
+// https://github.com/ink-splatters/gocryptfs/issues/893
 func TestAsUserSleep(t *testing.T) {
 	if os.Getuid() != 0 {
 		t.Skip("must run as root")

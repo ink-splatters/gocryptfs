@@ -11,9 +11,9 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/v2/ctlsock"
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/ctlsock"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 // TestLongnameStat checks that file names of all sizes (1 to 255) show up in
@@ -185,7 +185,7 @@ func TestEnoent(t *testing.T) {
 // If the symlink target gets too long due to base64 encoding, we should
 // return ENAMETOOLONG instead of having the kernel reject the data and
 // returning an I/O error to the user.
-// https://github.com/rfjakob/gocryptfs/issues/167
+// https://github.com/ink-splatters/gocryptfs/issues/167
 func TestTooLongSymlink(t *testing.T) {
 	var err error
 	var l int
@@ -318,7 +318,7 @@ func newWorkdir(t *testing.T) (workdirA, workdirB string) {
 // 1) They have a different NodeID, hence the kernel knows it's different files
 // 2) They have a different inode number, hence userspace knows they are not hard-linked.
 //
-// https://github.com/rfjakob/gocryptfs/issues/802
+// https://github.com/ink-splatters/gocryptfs/issues/802
 func TestHardlinkedLongname(t *testing.T) {
 	if plaintextnames {
 		t.Skip()
@@ -365,7 +365,7 @@ func TestHardlinkedLongname(t *testing.T) {
 
 // With inode number reuse and hard links, we could have returned
 // wrong data for gocryptfs.diriv and gocryptfs.xyz.longname files, respectively
-// (https://github.com/rfjakob/gocryptfs/issues/802).
+// (https://github.com/ink-splatters/gocryptfs/issues/802).
 //
 // Now that this is fixed, ensure that rsync and similar tools pick up the new
 // correct files by advancing mtime and ctime by 10 seconds, which should be more

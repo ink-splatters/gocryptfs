@@ -7,12 +7,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/configfile"
-	"github.com/rfjakob/gocryptfs/v2/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/v2/internal/inomap"
-	"github.com/rfjakob/gocryptfs/v2/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/configfile"
+	"github.com/ink-splatters/gocryptfs/v2/internal/contentenc"
+	"github.com/ink-splatters/gocryptfs/v2/internal/inomap"
+	"github.com/ink-splatters/gocryptfs/v2/internal/nametransform"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 )
 
 // RootNode is the root of the filesystem tree of Nodes.
@@ -94,7 +94,7 @@ func NewRootNode(args Args, c *contentenc.ContentEnc, n *nametransform.NameTrans
 	if rn.quirks&syscallcompat.QuirkBtrfsBrokenFalloc != 0 && !args.NoPrealloc {
 		syscallcompat.LogQuirk("Btrfs detected, forcing -noprealloc. " +
 			"Use \"chattr +C\" on the backing directory to enable NOCOW and allow preallocation. " +
-			"See https://github.com/rfjakob/gocryptfs/issues/395 for details.")
+			"See https://github.com/ink-splatters/gocryptfs/issues/395 for details.")
 	}
 	if statErr == nil {
 		rn.inoMap.TranslateStat(&st)

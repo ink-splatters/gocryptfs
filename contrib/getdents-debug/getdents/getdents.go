@@ -3,7 +3,7 @@
 
 /*
 Small tool to try to debug unix.Getdents problems on CIFS mounts
-( https://github.com/rfjakob/gocryptfs/issues/483 )
+( https://github.com/ink-splatters/gocryptfs/issues/483 )
 
 Example output:
 

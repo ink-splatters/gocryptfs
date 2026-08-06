@@ -15,7 +15,7 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 // With -sharedstorage (i.e. with fcntl byte-range locks) this test passes on all

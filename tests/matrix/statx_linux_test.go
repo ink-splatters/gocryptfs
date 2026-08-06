@@ -10,8 +10,8 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/v2/ctlsock"
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/ctlsock"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 const testStatxMask = unix.STATX_BASIC_STATS | unix.STATX_BTIME

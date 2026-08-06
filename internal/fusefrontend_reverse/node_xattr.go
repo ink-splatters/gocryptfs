@@ -6,7 +6,7 @@ import (
 	"context"
 	"syscall"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/pathiv"
+	"github.com/ink-splatters/gocryptfs/v2/internal/pathiv"
 )
 
 // We store encrypted xattrs under this prefix plus the base64-encoded

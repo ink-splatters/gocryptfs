@@ -9,7 +9,7 @@ import (
 $ time go test -bench . -run none
 goos: linux
 goarch: amd64
-pkg: github.com/rfjakob/gocryptfs/v2/internal/configfile
+pkg: github.com/ink-splatters/gocryptfs/v2/internal/configfile
 cpu: Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
 BenchmarkScryptN/10-4         	     339	   3488649 ns/op	 1053167 B/op	      22 allocs/op ... 3ms+1MiB
 BenchmarkScryptN/11-4         	     175	   6816072 ns/op	 2101742 B/op	      22 allocs/op
@@ -25,7 +25,7 @@ BenchmarkScryptN/20-4         	       1	3508224867 ns/op	1073746448 B/op	      2
 BenchmarkScryptN/21-4         	       1	9536561994 ns/op	2147488272 B/op	      23 allocs/op
 BenchmarkScryptN/22-4         	       1	16937072495 ns/op	4294971920 B/op	      23 allocs/op
 PASS
-ok  	github.com/rfjakob/gocryptfs/v2/internal/configfile	47.545s
+ok  	github.com/ink-splatters/gocryptfs/v2/internal/configfile	47.545s
 */
 
 func BenchmarkScryptN(b *testing.B) {

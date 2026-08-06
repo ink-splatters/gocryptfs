@@ -5,14 +5,14 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 // TestConfigCustomInsideCipherdir verifies that a custom config file (-config)
 // located inside CIPHERDIR is hidden from the encrypted reverse view instead of
 // leaking there in encrypted form.
 //
-// Regression test for https://github.com/rfjakob/gocryptfs/issues/1009
+// Regression test for https://github.com/ink-splatters/gocryptfs/issues/1009
 func TestConfigCustomInsideCipherdir(t *testing.T) {
 	backingDir, err := os.MkdirTemp(test_helpers.TmpDir, t.Name()+".")
 	if err != nil {

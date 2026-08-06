@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/v2/internal/cryptocore"
+	"github.com/ink-splatters/gocryptfs/v2/internal/contentenc"
+	"github.com/ink-splatters/gocryptfs/v2/internal/cryptocore"
 )
 
 func TestIsLongName(t *testing.T) {

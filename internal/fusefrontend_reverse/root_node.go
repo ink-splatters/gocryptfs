@@ -13,14 +13,14 @@ import (
 	"github.com/hanwen/go-fuse/v2/fs"
 	"github.com/hanwen/go-fuse/v2/fuse"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/configfile"
-	"github.com/rfjakob/gocryptfs/v2/internal/contentenc"
-	"github.com/rfjakob/gocryptfs/v2/internal/exitcodes"
-	"github.com/rfjakob/gocryptfs/v2/internal/fusefrontend"
-	"github.com/rfjakob/gocryptfs/v2/internal/inomap"
-	"github.com/rfjakob/gocryptfs/v2/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
+	"github.com/ink-splatters/gocryptfs/v2/internal/configfile"
+	"github.com/ink-splatters/gocryptfs/v2/internal/contentenc"
+	"github.com/ink-splatters/gocryptfs/v2/internal/exitcodes"
+	"github.com/ink-splatters/gocryptfs/v2/internal/fusefrontend"
+	"github.com/ink-splatters/gocryptfs/v2/internal/inomap"
+	"github.com/ink-splatters/gocryptfs/v2/internal/nametransform"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/internal/tlog"
 
 	ignore "github.com/sabhiram/go-gitignore"
 )
@@ -39,7 +39,7 @@ type RootNode struct {
 	// configPlainPath is the path of a custom config file (-config), relative to
 	// Cipherdir, set only when that file is located inside Cipherdir. Such a file
 	// is hidden from the encrypted view, otherwise it would leak in encrypted
-	// form (https://github.com/rfjakob/gocryptfs/issues/1009).
+	// form (https://github.com/ink-splatters/gocryptfs/issues/1009).
 	configPlainPath string
 	// inoMap translates inode numbers from different devices to unique inode
 	// numbers.
@@ -55,7 +55,7 @@ type RootNode struct {
 	// This makes each directory entry unique (even hard links),
 	// makes go-fuse hand out separate FUSE Node IDs for each, and prevents
 	// bizarre problems when inode numbers are reused behind our back,
-	// like this one: https://github.com/rfjakob/gocryptfs/issues/802
+	// like this one: https://github.com/ink-splatters/gocryptfs/issues/802
 	gen atomic.Uint64
 	// rootIno is the inode number that we report for the root node on mount
 	rootIno uint64
@@ -155,7 +155,7 @@ func (rn *RootNode) isExcludedPlain(pPath string) bool {
 		return false
 	}
 	// A custom config file (-config) inside Cipherdir is hidden from the
-	// encrypted view (https://github.com/rfjakob/gocryptfs/issues/1009).
+	// encrypted view (https://github.com/ink-splatters/gocryptfs/issues/1009).
 	if rn.configPlainPath != "" && pPath == rn.configPlainPath {
 		return true
 	}
@@ -188,7 +188,7 @@ func (rn *RootNode) excludeDirEntries(d *dirfdPlus, entries []fuse.DirEntry) (fi
 //
 // This is good because inode numbers can be reused behind our back, which could make
 // unrelated files appear hard-linked.
-// Example: https://github.com/rfjakob/gocryptfs/issues/802
+// Example: https://github.com/ink-splatters/gocryptfs/issues/802
 func (rn *RootNode) uniqueStableAttr(mode uint32, ino uint64) fs.StableAttr {
 	return fs.StableAttr{
 		Mode: mode,

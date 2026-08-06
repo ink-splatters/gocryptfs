@@ -3,7 +3,7 @@ package cryptocore
 import (
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/v2/internal/stupidgcm"
+	"github.com/ink-splatters/gocryptfs/v2/internal/stupidgcm"
 )
 
 // "New" should accept at least these param combinations

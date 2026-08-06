@@ -15,9 +15,9 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/rfjakob/gocryptfs/v2/ctlsock"
-	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/ctlsock"
+	"github.com/ink-splatters/gocryptfs/v2/internal/syscallcompat"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 // Write `n` random bytes to filename `fn`, read again, compare hash
@@ -678,7 +678,7 @@ func TestMkfifo(t *testing.T) {
 }
 
 // TestMagicNames verifies that "magic" names are handled correctly
-// https://github.com/rfjakob/gocryptfs/issues/174
+// https://github.com/ink-splatters/gocryptfs/issues/174
 func TestMagicNames(t *testing.T) {
 	names := []string{"warmup1", "warmup2", "gocryptfs.longname.QhUr5d9FHerwEs--muUs6_80cy6JRp89c1otLwp92Cs", "gocryptfs.diriv"}
 	for _, n := range names {
@@ -795,7 +795,7 @@ func TestStatfs(t *testing.T) {
 }
 
 // gocryptfs 2.0 reported the ciphertext size on symlink creation, causing
-// confusion: https://github.com/rfjakob/gocryptfs/issues/574
+// confusion: https://github.com/ink-splatters/gocryptfs/issues/574
 func TestSymlinkSize(t *testing.T) {
 	p := filepath.Join(test_helpers.DefaultPlainDir, t.Name())
 	// SYMLINK reports the size to the kernel
@@ -813,7 +813,7 @@ func TestSymlinkSize(t *testing.T) {
 }
 
 // gocryptfs 2.0+ reported the ciphertext size on hard link creation
-// https://github.com/rfjakob/gocryptfs/issues/724
+// https://github.com/ink-splatters/gocryptfs/issues/724
 func TestLinkSize(t *testing.T) {
 	p := filepath.Join(test_helpers.DefaultPlainDir, t.Name()) + ".regular"
 	f, err := os.Create(p)
@@ -854,7 +854,7 @@ func doTestLinkSize(t *testing.T, p string) {
 // TestPwd check that /usr/bin/pwd works inside gocryptfs.
 //
 // This was broken in gocryptfs v2.0 with -sharedstorage:
-// https://github.com/rfjakob/gocryptfs/issues/584
+// https://github.com/ink-splatters/gocryptfs/issues/584
 func TestPwd(t *testing.T) {
 	dir := test_helpers.DefaultPlainDir
 	for i := 0; i < 3; i++ {
@@ -882,7 +882,7 @@ func TestRootIno(t *testing.T) {
 
 // TestDirSize checks that we report the correct size for directories.
 //
-// https://github.com/rfjakob/gocryptfs/issues/951:
+// https://github.com/ink-splatters/gocryptfs/issues/951:
 // "cipherSize 30: incomplete last block" after upgrade to 2.6.0
 func TestDirSize(t *testing.T) {
 	pDir := test_helpers.DefaultPlainDir + "/" + t.Name()

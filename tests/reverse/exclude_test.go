@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/rfjakob/gocryptfs/v2/ctlsock"
-	"github.com/rfjakob/gocryptfs/v2/internal/nametransform"
-	"github.com/rfjakob/gocryptfs/v2/tests/test_helpers"
+	"github.com/ink-splatters/gocryptfs/v2/ctlsock"
+	"github.com/ink-splatters/gocryptfs/v2/internal/nametransform"
+	"github.com/ink-splatters/gocryptfs/v2/tests/test_helpers"
 )
 
 func ctlsockEncryptPath(t *testing.T, sock string, path string) string {
@@ -164,7 +164,7 @@ func TestExcludeTestFs(t *testing.T) {
 }
 
 // Exclude everything using "/*", then selectively include only dir1 using "!/dir1"
-// https://github.com/rfjakob/gocryptfs/issues/588
+// https://github.com/ink-splatters/gocryptfs/issues/588
 func TestExcludeAllOnlyDir1(t *testing.T) {
 	// --exclude-wildcard patterns, gitignore syntax
 	patterns := []string{
